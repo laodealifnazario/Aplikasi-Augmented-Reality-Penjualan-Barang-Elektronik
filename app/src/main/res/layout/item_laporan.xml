@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="5dp"
+    app:cardCornerRadius="5dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/labelNamaAkun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Akun : "
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/akun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="d"
+            android:layout_toEndOf="@+id/labelNamaAkun"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/labeltanggalLaporan"
+            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelNamaAkun"
+            android:text="Tanggal Laporan : "/>
+
+        <TextView
+            android:id="@+id/tglLaporan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="c"
+            android:layout_below="@id/labelNamaAkun"
+            android:layout_toEndOf="@+id/labeltanggalLaporan"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:id="@+id/labelTypeAkun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_below="@id/labeltanggalLaporan"
+            android:text="Type Akun : "/>
+
+        <TextView
+            android:id="@+id/typeAkun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_below="@id/tglLaporan"
+            android:layout_toEndOf="@+id/labelTypeAkun"
+            android:text="b"/>
+
+        <TextView
+            android:id="@+id/labelJenisLaporan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_below="@id/typeAkun"
+            android:text="Jenis Laporan : "/>
+
+        <TextView
+            android:id="@+id/jenisLaporan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_below="@id/typeAkun"
+            android:layout_toEndOf="@+id/labelJenisLaporan"
+            android:text="a"/>
+
+
+    </RelativeLayout>
+
+
+
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailBarang.DetailBarang">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/toolbarRl">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_back"
+            android:layout_centerVertical="true"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/toolbarHapusBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="38dp"
+            android:paddingEnd="14dp"
+            android:src="@drawable/baseline_delete_24"
+            tools:ignore="ContentDescription,RtlSymmetry" />
+
+        <ImageView
+            android:id="@+id/toolbarEditBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="14dp"
+            android:src="@drawable/edit"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            tools:ignore="ContentDescription,RtlSymmetry" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbarTitleTv"
+            android:text="Detail Barang Jualan"
+            android:layout_centerInParent="true"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            tools:ignore="HardcodedText" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarRl"
+        android:layout_above="@+id/optionsll"
+        android:layout_marginTop="0dp"
+        android:padding="10dp"
+        tools:ignore="UnknownId">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="ScrollViewSize">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/gambarSliderVp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:id="@+id/hargaLabel"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/gambarSliderVp"
+                android:paddingTop="10dp"
+                android:text="Harga" />
+
+            <TextView
+                android:id="@+id/priceSymbolTv"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hargaLabel"
+                android:text="Rp. " />
+
+            <TextView
+                android:id="@+id/hargaTv"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hargaLabel"
+                android:layout_toEndOf="@id/priceSymbolTv"
+                android:text="300" />
+
+            <TextView
+                android:id="@+id/labelNamaBarang"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/priceSymbolTv"
+                android:paddingTop="10dp"
+                android:text="Nama Barang" />
+
+            <TextView
+                android:id="@+id/namaBarangTv"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/labelNamaBarang"
+                android:text="Laptop Lenovo X12" />
+
+            <TextView
+                android:id="@+id/labelJenisBarang"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/namaBarangTv"
+                android:paddingTop="10dp"
+                android:text="Jenis Barang" />
+
+            <TextView
+                android:id="@+id/jenisBarangTv"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/labelJenisBarang"
+                android:text="jenis" />
+
+            <TextView
+                android:id="@+id/deskripsiLabel"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/jenisBarangTv"
+                android:paddingTop="10dp"
+                android:text="Deskripsi" />
+
+            <TextView
+                android:id="@+id/deskripsiTv"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deskripsiLabel"
+                android:text="deskripsi" />
+
+            <TextView
+                android:id="@+id/profilPenjualLabel"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/deskripsiTv"
+                android:paddingTop="10dp"
+                android:text="Profil Penjual :"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:id="@+id/sellerProfileCv"
+                android:layout_below="@+id/profilPenjualLabel"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:id="@+id/fotoProfilPenjual"
+                        android:src="@drawable/akun"
+                        android:layout_marginEnd="10dp"
+                        tools:src="@tools:sample/avatars"
+                        app:shapeAppearanceOverlay="@style/ImageStyle_Circle" />
+
+                    <TextView
+                        android:id="@+id/namaPenjualTv"
+                        style="@style/TextAppearance.MaterialComponents.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@+id/fotoProfilPenjual"
+                        android:text="Nama User" />
+
+                    <TextView
+                        android:id="@+id/emailTV"
+                        style="@style/TextAppearance.MaterialComponents.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/namaPenjualTv"
+                        android:layout_toEndOf="@+id/fotoProfilPenjual"
+                        android:text="Email" />
+
+                    <TextView
+                        android:id="@+id/nomorTelepon"
+                        style="@style/TextAppearance.MaterialComponents.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/emailTV"
+                        android:layout_toEndOf="@+id/fotoProfilPenjual"
+                        android:text="Nomor Telepon" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/optionsll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="2dp"
+        android:visibility="visible">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tombolDiskusi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="2"
+            android:text="DISKUSI"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:cornerRadius="8dp"
+            tools:ignore="HardcodedText,SmallSp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/lihatAR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="2"
+            android:text="LIHAT AR"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:cornerRadius="8dp"
+            tools:ignore="HardcodedText,SmallSp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/beli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="2"
+            android:text="BELI"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:cornerRadius="8dp"
+            tools:ignore="HardcodedText,SmallSp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/unggah3DAR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="2"
+            android:text="UNGGAH 3D AR"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:cornerRadius="8dp"
+            android:backgroundTint="#C81111"
+            tools:ignore="HardcodedText,SmallSp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

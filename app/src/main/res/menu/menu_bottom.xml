@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_home"
+        android:icon="@drawable/all"
+        android:title="Beranda"/>
+
+    <item android:id="@+id/menu_diskusi"
+        android:title="Diskusi"
+        android:icon="@drawable/icon_chat"/>
+
+    <item android:id="@+id/menu_pesanan"
+        android:title="Pesanan"
+        android:icon="@drawable/pesanan"/>
+
+    <item android:id="@+id/menu_transaksi"
+        android:icon="@drawable/transaksi"
+        android:title="Transaksi"/>
+
+    <item android:id="@+id/menu_akun"
+        android:icon="@drawable/akun"
+        android:title="Akun"/>
+</menu>

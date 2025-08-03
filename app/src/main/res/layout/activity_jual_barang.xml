@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JualBarang.JualBarang">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        tools:ignore="MissingConstraints">
+
+        <!-- ImageButton : Tombol Keluar -->
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_back"
+            android:layout_centerVertical="true"/>
+
+        <!-- TextView : Toolbar Tiitle -->
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Posting Barang" />
+
+        <!-- ImageButton : Menambahkan Gambar -->
+        <ImageButton
+            android:id="@+id/btnGambar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@drawable/tambah_gambar"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <!-- View : To make toolbar look separate from other ui -->
+        <View
+            android:layout_below="@+id/toolbarRl"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_alignParentBottom="true"
+            tools:ignore="NotSibling" />
+
+    </RelativeLayout>
+
+    <!-- Tampilan bisa di skrol atas bawah -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarRl"
+        android:layout_above="@id/postingAdBtn"
+        android:padding="10dp"
+        tools:ignore="MissingClass">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Teks View : hanya untuk menampilkan label -->
+            <TextView
+                android:id="@+id/imagesLabelTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Masukkan gambar barang:"
+                style="@style/TextAppearance.MaterialComponents.Body1"/>
+
+            <!-- RecylerView : Menampilkan gambar picked/ taken dari galeri/ Kamera -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/imagesRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imagesLabelTv"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="4"
+                tools:listitem="@layout/row_gambar_picked"/>
+
+            <!-- Teks input : input brand posting yang dibuat -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/labelNamaBarang"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imagesRv"
+                android:layout_marginTop="10dp"
+                android:hint="Nama Barang"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                tools:ignore="TouchTargetSizeCheck">
+
+                <EditText
+                    android:id="@+id/inputNamaBarang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName|textCapSentences"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Teks Input Layout : pilih jenis barang dari opsi tarik-turun -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/labelJenisBarang"
+                android:layout_below="@id/labelNamaBarang"
+                android:layout_width="match_parent"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:hint="Jenis Barang"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                    android:id="@+id/inputJenisBarang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Edit Teks : Harga -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/labelHarga"
+                android:layout_below="@id/labelJenisBarang"
+                android:hint="Harga"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                android:layout_width="match_parent">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/inputHarga"
+                    tools:ignore="LabelFor" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Edit Teks : Deskripsi -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/labelDeskripsi"
+                android:layout_below="@id/labelHarga"
+                android:hint="Deskripsi"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                android:layout_width="match_parent">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:id="@+id/inputDeskripsi"
+                    android:minHeight="100dp"
+                    android:gravity="top|start"
+                    tools:ignore="Autofill,LabelFor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/postingAdBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:minHeight="50dp"
+        android:text=""
+        app:cornerRadius="8dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</RelativeLayout>

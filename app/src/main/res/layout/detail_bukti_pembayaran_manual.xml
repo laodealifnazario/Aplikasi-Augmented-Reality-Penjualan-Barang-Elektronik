@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bayar.DetailBuktiPembayaranManual">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/toolbarRl">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_back"
+            android:layout_centerVertical="true"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbarTitleTv"
+            android:text="Bukti Pembayaran Manual"
+            android:layout_centerInParent="true"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            tools:ignore="HardcodedText" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarRl"
+        android:layout_marginTop="0dp"
+        android:padding="10dp"
+        tools:ignore="UnknownId">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="ScrollViewSize">
+
+            <TextView
+                android:id="@+id/labelUang"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:paddingTop="10dp"
+                android:text="Jumlah Uang:" />
+
+            <TextView
+                android:id="@+id/uang"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/labelUang"
+                android:text="0000000" />
+
+            <TextView
+                android:id="@+id/labelNamaPemilikRekeking"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/uang"
+                android:paddingTop="10dp"
+                android:text="Nama Pemilik Rekening:" />
+
+            <TextView
+                android:id="@+id/namaPemilikRekening"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/labelNamaPemilikRekeking"
+                android:text="xxxxxx" />
+
+            <TextView
+                android:id="@+id/labelNoRekening"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/namaPemilikRekening"
+                android:paddingTop="10dp"
+                android:text="Nomor Rekening:" />
+
+            <TextView
+                android:id="@+id/noRekening"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/labelNoRekening"
+                android:text="xxxxxxx" />
+
+            <TextView
+                android:id="@+id/labelBank"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/noRekening"
+                android:paddingTop="10dp"
+                android:text="Nama Bank:" />
+
+            <TextView
+                android:id="@+id/namaBank"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/labelBank"
+                android:text="xxxxxxxxxx" />
+
+            <TextView
+                android:id="@+id/labelGambar"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/namaBank"
+                android:paddingTop="10dp"
+                android:text="Foto Bukti Mutasi Pembayaran:" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/gambarSliderVp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/labelGambar"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

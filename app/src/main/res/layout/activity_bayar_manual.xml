@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bayar.Pembayaran">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        tools:ignore="MissingConstraints">
+
+        <!-- ImageButton : Tombol Keluar -->
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_back"
+            android:layout_centerVertical="true"/>
+
+        <!-- TextView : Toolbar Tiitle -->
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Pembayaran" />
+
+        <!-- View : To make toolbar look separate from other ui -->
+        <View
+            android:layout_below="@+id/toolbarRl"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_alignParentBottom="true"
+            tools:ignore="NotSibling" />
+
+    </RelativeLayout>
+
+    <!-- Tampilan bisa di skrol atas bawah -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarRl"
+        android:layout_above="@id/btnBayar"
+        android:padding="10dp"
+        tools:ignore="MissingClass">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/labelHarga"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Harga"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                tools:ignore="TouchTargetSizeCheck">
+                <EditText
+                    android:id="@+id/inputHarga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:enabled="false"
+                    android:textColor="@color/black"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Teks Input Layout untuk memilih Nama Bank pada Sistem -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/labelbankSistem"
+                android:layout_below="@id/labelHarga"
+                android:layout_width="match_parent"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:hint="Pilih Bank Tujuan Transfer"
+                android:layout_height="wrap_content">
+                <AutoCompleteTextView
+                    android:id="@+id/inputBanktujuanTransfer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:inputType="none"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <!-- Teks Input Layout untuk nomor rekening (nanti diubah sesuai dengan pilihan bank) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/labelNoRekeningBankSistem"
+                android:layout_below="@id/labelbankSistem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nomor Rekening Tujuan Transfer"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                tools:ignore="ExtraText">
+                <EditText
+                    android:id="@+id/pilihRek"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:enabled="false"
+                    android:textColor="@color/black"
+                    tools:ignore="LabelFor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!-- Teks input : Nama pengirim -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/labelNamaPemilikRekening"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama Asli Anda"
+                android:layout_below="@+id/labelNoRekeningBankSistem"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                tools:ignore="TouchTargetSizeCheck">
+                <EditText
+                    android:id="@+id/inputNamaPemilikRekening"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName|textCapSentences"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Edit Teks : Nomor Resi -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/labelNoRekening"
+                android:layout_below="@id/labelNamaPemilikRekening"
+                android:hint="Nomor Rekening Anda"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                android:layout_width="match_parent">
+
+                <EditText
+                    android:id="@+id/inputNoRekening"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    tools:ignore="LabelFor" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Teks Input Layout : pilih jenis jasa ekspedisi dari opsi tarik-turun -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/labelBank"
+                android:layout_below="@id/labelNoRekening"
+                android:layout_width="match_parent"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:hint="Nama Bank Anda"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                    android:id="@+id/inputBankAnda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/labelAlamat"
+                android:layout_below="@id/labelBank"
+                android:layout_width="match_parent"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:hint="Alamat Anda"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                    android:id="@+id/alamatPembeli"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <!-- Teks View : hanya untuk menampilkan label -->
+            <TextView
+                android:paddingTop="15dp"
+                android:id="@+id/imagesLabelTv"
+                android:layout_below="@id/labelAlamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Foto Bukti Mutasi Transfer:"
+                style="@style/TextAppearance.MaterialComponents.Body1"/>
+
+            <!-- ImageButton : Menambahkan Gambar -->
+            <ImageButton
+                android:id="@+id/btnGambar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/imagesLabelTv"
+                android:layout_below="@+id/labelAlamat"
+                android:padding="10dp"
+                android:src="@drawable/tambah_gambar"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <!-- RecylerView : Menampilkan gambar picked/ taken dari galeri/ Kamera -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/imagesRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imagesLabelTv"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="4"
+                tools:listitem="@layout/row_gambar_picked"/>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBayar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:minHeight="50dp"
+        android:text="Bayar"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        app:cornerRadius="8dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</RelativeLayout>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailBuktiPengirimanBarang">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/toolbarRl">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_back"
+            android:layout_centerVertical="true"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbarTitleTv"
+            android:text="Bukti Pengiriman Barang"
+            android:layout_centerInParent="true"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            tools:ignore="HardcodedText" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarRl"
+        android:layout_marginTop="0dp"
+        android:padding="10dp"
+        tools:ignore="UnknownId">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="ScrollViewSize">
+
+            <TextView
+                android:id="@+id/labelNoResi"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:paddingTop="10dp"
+                android:text="Nomor Resi:" />
+
+            <TextView
+                android:id="@+id/noResi"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/labelNoResi"
+                android:text="0000000" />
+
+            <TextView
+                android:id="@+id/labelNamaPengirim"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/noResi"
+                android:paddingTop="10dp"
+                android:text="Nama Pengirim:" />
+
+            <TextView
+                android:id="@+id/namaPengirim"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/labelNamaPengirim"
+                android:text="xxxxxx" />
+
+            <TextView
+                android:id="@+id/labelJasaEkspedisi"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/namaPengirim"
+                android:paddingTop="10dp"
+                android:text="Jasa Ekspedisi:" />
+
+            <TextView
+                android:id="@+id/jasaEkspedisi"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/labelJasaEkspedisi"
+                android:text="xxxxxxx" />
+
+            <TextView
+                android:id="@+id/labelAlamatPengirim"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/jasaEkspedisi"
+                android:paddingTop="10dp"
+                android:text="Alamat Pengirim:" />
+
+            <TextView
+                android:id="@+id/alamatPengirim"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/labelAlamatPengirim"
+                android:text="xxxxxxxxxx" />
+
+            <TextView
+                android:id="@+id/labelAlamatPenerima"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/alamatPengirim"
+                android:paddingTop="10dp"
+                android:text="Alamat Penerima:" />
+
+            <TextView
+                android:id="@+id/alamatPenerima"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/labelAlamatPenerima"
+                android:text="xxxxxxxxxx" />
+
+            <TextView
+                android:id="@+id/labelGambar"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/alamatPenerima"
+                android:paddingTop="10dp"
+                android:text="Foto Bukti Pengiriman:" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/gambarBuktiPengiriman"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/labelGambar"/>
+
+        </RelativeLayout>
+
+        <!--Tombol Login-->
+
+    </ScrollView>
+    <Button
+        android:id="@+id/btnLokasi"
+        android:text="Lihat Lokasi"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+
+
+</RelativeLayout>

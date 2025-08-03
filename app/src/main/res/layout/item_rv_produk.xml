@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true"
+    android:padding="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageTv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="#A3A2A5"
+            android:scaleType="centerCrop"
+            android:src="@drawable/all"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nama_barang"
+            android:textStyle="bold"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_toEndOf="@+id/imageTv"
+            android:maxLines="1"
+            android:textSize="16sp"
+            android:text="Nama Barang"
+            android:ellipsize="end"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/deskripsiTv"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_toEndOf="@+id/imageTv"
+            android:layout_below="@+id/nama_barang"
+            android:maxLines="2"
+            android:textSize="12sp"
+            android:text="Deskripsi"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rp"
+            android:layout_below="@id/deskripsiTv"
+            android:layout_toEndOf="@+id/imageTv"
+            android:text="Rp."
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/harga"
+            android:layout_below="@id/deskripsiTv"
+            android:layout_toEndOf="@+id/rp"
+            android:textStyle="bold"
+            android:text="300.000"
+            android:layout_marginTop="2dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/status"
+            android:layout_below="@id/rp"
+            android:layout_toEndOf="@+id/imageTv"
+            android:textStyle="bold"
+            android:text="Status"
+            android:textColor="@color/white"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="4dp"
+            tools:ignore="HardcodedText" />
+
+<!--        <Button-->
+<!--            android:id="@+id/upload_AR"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="UNGGAH 3D AR"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:layout_alignParentEnd="true"/>-->
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
