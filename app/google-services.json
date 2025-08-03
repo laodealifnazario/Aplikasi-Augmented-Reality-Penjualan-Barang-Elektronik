@@ -1,9 +1,9 @@
 {
   "project_info": {
-    "project_number": "173751431947",
-    "firebase_url": "https://useradmin-f9b90-default-rtdb.firebaseio.com",
-    "project_id": "useradmin-f9b90",
-    "storage_bucket": "useradmin-f9b90.appspot.com"
+    "project_number": "11",
+    "firebase_url": "https://useradmin-11-default-rtdb.firebaseio.com",
+    "project_id": "useradmin-11",
+    "storage_bucket": "useradmin-11.appspot.com"
   },
   "client": [
     {
@@ -16,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCC8jjWxa7XSbEyiESfxKK0SNz8jr-i9QQ"
+          "current_key": "AIza444jWxa27XSbEyiE3211SNz8jr-11"
         }
       ],
       "services": {
@@ -35,7 +35,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCC8jjWxa7XSbEyiESfxKK0SNz8jr-i9QQ"
+          "current_key": "AIzaSyC51jjW4a7X4SbE47yiE4SfxK7K05SNz8jr-i9QQ"
         }
       ],
       "services": {
